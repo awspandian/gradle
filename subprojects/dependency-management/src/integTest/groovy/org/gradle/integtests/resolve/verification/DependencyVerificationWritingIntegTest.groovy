@@ -102,7 +102,7 @@ class DependencyVerificationWritingIntegTest extends AbstractDependencyVerificat
             artifact("foo-1.0.pom") {
                 declaresChecksums(
                     sha1: "5474a386e69fd213d375dcaffadf6e291cc9aea0",
-                    sha512: "2b356766005f7805b69cc84875e32354440d745f0f46c76960ab631c1a15a0e30ba0698b38f1405fd716666f39f92e40ec328e3da20e9554b522aac6d8a0c2a"
+                    sha512: "02b356766005f7805b69cc84875e32354440d745f0f46c76960ab631c1a15a0e30ba0698b38f1405fd716666f39f92e40ec328e3da20e9554b522aac6d8a0c2a"
                 )
             }
         }
@@ -145,7 +145,7 @@ class DependencyVerificationWritingIntegTest extends AbstractDependencyVerificat
             artifact("foo-1.0.pom") {
                 declaresChecksums(
                     sha1: "5474a386e69fd213d375dcaffadf6e291cc9aea0",
-                    sha512: "2b356766005f7805b69cc84875e32354440d745f0f46c76960ab631c1a15a0e30ba0698b38f1405fd716666f39f92e40ec328e3da20e9554b522aac6d8a0c2a"
+                    sha512: "02b356766005f7805b69cc84875e32354440d745f0f46c76960ab631c1a15a0e30ba0698b38f1405fd716666f39f92e40ec328e3da20e9554b522aac6d8a0c2a"
                 )
             }
         }
@@ -196,7 +196,7 @@ class DependencyVerificationWritingIntegTest extends AbstractDependencyVerificat
             artifact("foo-1.0.pom") {
                 declaresChecksums(
                     sha1: "5474a386e69fd213d375dcaffadf6e291cc9aea0",
-                    sha512: "2b356766005f7805b69cc84875e32354440d745f0f46c76960ab631c1a15a0e30ba0698b38f1405fd716666f39f92e40ec328e3da20e9554b522aac6d8a0c2a"
+                    sha512: "02b356766005f7805b69cc84875e32354440d745f0f46c76960ab631c1a15a0e30ba0698b38f1405fd716666f39f92e40ec328e3da20e9554b522aac6d8a0c2a"
                 )
             }
         }
@@ -244,7 +244,7 @@ class DependencyVerificationWritingIntegTest extends AbstractDependencyVerificat
             artifact("foo-1.0.pom") {
                 declaresChecksums(
                     sha1: "5474a386e69fd213d375dcaffadf6e291cc9aea0",
-                    sha512: "2b356766005f7805b69cc84875e32354440d745f0f46c76960ab631c1a15a0e30ba0698b38f1405fd716666f39f92e40ec328e3da20e9554b522aac6d8a0c2a"
+                    sha512: "02b356766005f7805b69cc84875e32354440d745f0f46c76960ab631c1a15a0e30ba0698b38f1405fd716666f39f92e40ec328e3da20e9554b522aac6d8a0c2a"
                 )
             }
             artifact("foo-1.0-classy.jar") {
@@ -298,7 +298,7 @@ class DependencyVerificationWritingIntegTest extends AbstractDependencyVerificat
             artifact("foo-1.0.pom") {
                 declaresChecksums(
                     sha1: "5474a386e69fd213d375dcaffadf6e291cc9aea0",
-                    sha512: "2b356766005f7805b69cc84875e32354440d745f0f46c76960ab631c1a15a0e30ba0698b38f1405fd716666f39f92e40ec328e3da20e9554b522aac6d8a0c2a"
+                    sha512: "02b356766005f7805b69cc84875e32354440d745f0f46c76960ab631c1a15a0e30ba0698b38f1405fd716666f39f92e40ec328e3da20e9554b522aac6d8a0c2a"
                 )
             }
         }
@@ -350,7 +350,7 @@ class DependencyVerificationWritingIntegTest extends AbstractDependencyVerificat
             artifact("foo-1.0.pom") {
                 declaresChecksums(
                     sha1: "5474a386e69fd213d375dcaffadf6e291cc9aea0",
-                    sha512: "2b356766005f7805b69cc84875e32354440d745f0f46c76960ab631c1a15a0e30ba0698b38f1405fd716666f39f92e40ec328e3da20e9554b522aac6d8a0c2a"
+                    sha512: "02b356766005f7805b69cc84875e32354440d745f0f46c76960ab631c1a15a0e30ba0698b38f1405fd716666f39f92e40ec328e3da20e9554b522aac6d8a0c2a"
                 )
             }
         }
@@ -475,7 +475,7 @@ class DependencyVerificationWritingIntegTest extends AbstractDependencyVerificat
             artifact("foo-1.0.pom") {
                 declaresChecksums(
                     sha1: "5474a386e69fd213d375dcaffadf6e291cc9aea0",
-                    sha512: "2b356766005f7805b69cc84875e32354440d745f0f46c76960ab631c1a15a0e30ba0698b38f1405fd716666f39f92e40ec328e3da20e9554b522aac6d8a0c2a"
+                    sha512: "02b356766005f7805b69cc84875e32354440d745f0f46c76960ab631c1a15a0e30ba0698b38f1405fd716666f39f92e40ec328e3da20e9554b522aac6d8a0c2a"
                 )
             }
         }
@@ -576,7 +576,7 @@ class DependencyVerificationWritingIntegTest extends AbstractDependencyVerificat
             artifact("foo-1.0.pom") {
                 declaresChecksums(
                     sha1: "5474a386e69fd213d375dcaffadf6e291cc9aea0",
-                    sha512: "2b356766005f7805b69cc84875e32354440d745f0f46c76960ab631c1a15a0e30ba0698b38f1405fd716666f39f92e40ec328e3da20e9554b522aac6d8a0c2a"
+                    sha512: "02b356766005f7805b69cc84875e32354440d745f0f46c76960ab631c1a15a0e30ba0698b38f1405fd716666f39f92e40ec328e3da20e9554b522aac6d8a0c2a"
                 )
             }
         }
@@ -603,7 +603,7 @@ class DependencyVerificationWritingIntegTest extends AbstractDependencyVerificat
          </artifact>
          <artifact name="foo-1.0.pom">
             <sha1 value="5474a386e69fd213d375dcaffadf6e291cc9aea0"/>
-            <sha512 value="2b356766005f7805b69cc84875e32354440d745f0f46c76960ab631c1a15a0e30ba0698b38f1405fd716666f39f92e40ec328e3da20e9554b522aac6d8a0c2a"/>
+            <sha512 value="02b356766005f7805b69cc84875e32354440d745f0f46c76960ab631c1a15a0e30ba0698b38f1405fd716666f39f92e40ec328e3da20e9554b522aac6d8a0c2a"/>
          </artifact>
       </component>
       <component group="org" name="bar" version="1.0">
@@ -734,7 +734,7 @@ class DependencyVerificationWritingIntegTest extends AbstractDependencyVerificat
             }
             artifact("foo-1.0.module") {
                 declaresChecksums(
-                    sha1: "a1a9a2fa2769295b6cef64520662a9a9135e3bb",
+                    sha1: "0a1a9a2fa2769295b6cef64520662a9a9135e3bb",
                     sha512: "7505ecc6796dd6d0a90a7e422d25c50a7c4b85b21b71ecb43dfca431bb3c3d2f696634c839a315333c96662f92987a9c58719748f6a2017fa5a89913870db60b"
                 )
             }

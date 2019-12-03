@@ -50,7 +50,7 @@ class DependencyVerificationIntegrityCheckIntegTest extends AbstractDependencyVe
         "md5"    | "ea8b622874eaa501476e0ebbe0c562ed"                                                                                                 | "ace8bd734dd558c3babc395567682a31"
         "sha1"   | "16e066e005a935ac60f06216115436ab97c5da02"                                                                                         | "5474a386e69fd213d375dcaffadf6e291cc9aea0"
         "sha256" | "20ae575ede776e5e06ee6b168652d11ee23069e92de110fdec13fbeaa5cf3bbc"                                                                 | "70a3ea14d9fbec67ffaf8a01395051e677384155d4cc6eb358b5f77de72373f3"
-        "sha512" | "734fce768f0e1a3aec423cb4804e5cdf343fd317418a5da1adc825256805c5cad9026a3e927ae43ecc12d378ce8f45cc3e16ade9114c9a147fda3958d357a85b" | "2b356766005f7805b69cc84875e32354440d745f0f46c76960ab631c1a15a0e30ba0698b38f1405fd716666f39f92e40ec328e3da20e9554b522aac6d8a0c2a"
+        "sha512" | "734fce768f0e1a3aec423cb4804e5cdf343fd317418a5da1adc825256805c5cad9026a3e927ae43ecc12d378ce8f45cc3e16ade9114c9a147fda3958d357a85b" | "02b356766005f7805b69cc84875e32354440d745f0f46c76960ab631c1a15a0e30ba0698b38f1405fd716666f39f92e40ec328e3da20e9554b522aac6d8a0c2a"
     }
 
     def "doesn't try to verify checksums for changing dependencies"() {
