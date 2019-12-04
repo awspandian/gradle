@@ -16,6 +16,7 @@
 
 package org.gradle.smoketests
 
+import org.gradle.integtests.fixtures.ToBeFixedForInstantExecution
 import org.gradle.util.Requires
 import org.gradle.util.TestPrecondition
 import org.gradle.util.ports.ReleasingPortAllocator
@@ -33,6 +34,7 @@ class ThirdPartyPluginsSmokeTest extends AbstractSmokeTest {
 
     @Unroll
     @Issue('https://plugins.gradle.org/plugin/com.github.johnrengelman.shadow')
+    @ToBeFixedForInstantExecution
     def 'shadow plugin #version'() {
         given:
         buildFile << """
@@ -170,6 +172,7 @@ class ThirdPartyPluginsSmokeTest extends AbstractSmokeTest {
     }
 
     @Issue('https://plugins.gradle.org/plugin/io.spring.dependency-management')
+    @ToBeFixedForInstantExecution
     def 'spring dependency management plugin'() {
         given:
         buildFile << """
@@ -356,6 +359,7 @@ class ThirdPartyPluginsSmokeTest extends AbstractSmokeTest {
 
     @Issue('https://plugins.gradle.org/plugin/com.github.spotbugs')
     @Requires(TestPrecondition.JDK11_OR_EARLIER)
+    @ToBeFixedForInstantExecution
     def 'spotbugs plugin'() {
         given:
         buildFile << """
