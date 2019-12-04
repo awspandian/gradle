@@ -76,6 +76,12 @@ taskA.threadPoolSize = taskB.outputFile.map { it.text.toInteger() }
 In this case, calling `get()`, or any other query method, on `taskA.threadPoolSize` will produce a deprecation warning if done prior to `taskB` completing, as the file has not yet been generated.
 This will become an error in Gradle 7.0
 
+==== AbstractCompile and SourceDirectorySet use directory properties to model destinations
+
+Dependencies between compile tasks (subclasses of `AbstractCompile`) have been remodelled using directory providers.
+In this context, the existing getters and setters for the destination/output directories on `AbstractCompile` and `SourceDirectorySet` have been deprecated in favor of the new directory properties.
+Consult the Javadoc of link:{javadocPath}/org/gradle/api/tasks/compile/AbstractCompile.html#getDestinationDirectory[`AbstractCompile.getDestinationDirectory()`], link:{javadocPath}/org/gradle/api/file/SourceDirectorySet.html#getDestinationDirectory[`SourceDirectorySet.getDestinationDirectory()`] and link:{javadocPath}/org/gradle/api/file/SourceDirectorySet.html#getClassesDirectory[`SourceDirectorySet.getClassesDirectory()`] for details.
+
 === Potential breaking changes
 
 ==== Updates to bundled Gradle dependencies
