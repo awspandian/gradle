@@ -47,6 +47,7 @@ public class Jvm implements JavaInfo {
     private File javacExecutable;
     private File javadocExecutable;
     private File toolsJar;
+    private Boolean jdk;
 
     public static Jvm current() {
         Jvm jvm = CURRENT.get();
@@ -147,10 +148,26 @@ public class Jvm implements JavaInfo {
         return javaHome.hashCode();
     }
 
-    private File findExecutable(String command) {
+    public boolean isJdk() {
+        if (jdk == null) {
+            jdk = findExecutableInJavaHome("javac") != null;
+        }
+        return jdk;
+    }
+
+    @Nullable
+    private File findExecutableInJavaHome(String command) {
         File exec = new File(getJavaHome(), "bin/" + command);
         File executable = new File(os.getExecutableName(exec.getAbsolutePath()));
         if (executable.isFile()) {
+            return executable;
+        }
+        return null;
+    }
+
+    private File findExecutable(String command) {
+        File executable = findExecutableInJavaHome(command);
+        if (executable != null) {
             return executable;
         }
 
@@ -256,7 +273,7 @@ public class Jvm implements JavaInfo {
     }
 
     /**
-     * Locates a stand-alone JRE installation for this JVM. Returns null if not found.
+     * Locates a stand-alone JRE installation for this JVM. Returns null if not found. This is the JRE installed outside the JDK installation.
      */
     @Nullable
     public Jre getStandaloneJre() {
@@ -274,24 +291,32 @@ public class Jvm implements JavaInfo {
                 return new DefaultJre(jreDir);
             }
         }
-        if (!new File(javaHome, "jre").isDirectory()) {
-            return new DefaultJre(javaHome);
-        }
         return null;
     }
 
     /**
-     * Locates the JRE installation for this JVM. Returns null if no JRE installation is available.
+     * Locates the JRE installation contained within this JVM. Returns null if no JRE installation is available.
      */
     @Nullable
-    public Jre getJre() {
+    public Jre getEmbeddedJre() {
         File jreDir = new File(javaBase, "jre");
         if (jreDir.isDirectory()) {
             return new DefaultJre(jreDir);
-        } else if (JavaVersion.current().isJava9Compatible()) {
-            return null;
         }
-        return new DefaultJre(javaBase);
+        return null;
+    }
+
+    @Nullable
+    public Jre getJre() {
+        Jre standaloneJre = getStandaloneJre();
+        if (standaloneJre != null) {
+            return standaloneJre;
+        }
+        Jre embeddedJre = getEmbeddedJre();
+        if (embeddedJre != null) {
+            return embeddedJre;
+        }
+        return null;
     }
 
     private File findToolsJar(File javaHome) {

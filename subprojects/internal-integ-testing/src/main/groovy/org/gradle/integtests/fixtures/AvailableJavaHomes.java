@@ -222,11 +222,12 @@ public abstract class AvailableJavaHomes {
         if (jre != null) {
             return jre.getHomeDir();
         }
-        jre = jvm.getJre();
+        jre = jvm.getEmbeddedJre();
         if (jre != null) {
             return jre.getHomeDir();
         }
-        return null;
+        // Use the JDK instead
+        return jvm.getJavaHome();
     }
 
     private static List<JvmInstallation> getJvms() {

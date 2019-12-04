@@ -94,7 +94,18 @@ public class JavaInstallationProbe {
             this.error = error;
         }
 
+        public File getJavaHome() {
+            assertOk();
+            return new File(metadata.get(SysProp.JAVA_HOME));
+        }
+
+        public JavaVersion getJavaVersion() {
+            assertOk();
+            return JavaVersion.toVersion(metadata.get(SysProp.VERSION));
+        }
+
         public InstallType getInstallType() {
+            assertOk();
             return installType;
         }
 
@@ -103,14 +114,17 @@ public class JavaInstallationProbe {
         }
 
         public void configure(LocalJavaInstallation install) {
+            assertOk();
+            install.setJavaHome(getJavaHome());
+            install.setJavaVersion(getJavaVersion());
+            String jdkName = computeJdkName(installType, metadata);
+            install.setDisplayName(jdkName + " " + getJavaVersion().getMajorVersion());
+        }
+
+        private void assertOk() {
             if (error != null) {
                 throw new IllegalStateException("Unable to configure Java installation, probing failed with the following message: " + error);
             }
-            install.setJavaHome(new File(metadata.get(SysProp.JAVA_HOME)));
-            JavaVersion javaVersion = JavaVersion.toVersion(metadata.get(SysProp.VERSION));
-            install.setJavaVersion(javaVersion);
-            String jdkName = computeJdkName(installType, metadata);
-            install.setDisplayName(jdkName + " " + javaVersion.getMajorVersion());
         }
     }
 
@@ -125,8 +139,8 @@ public class JavaInstallationProbe {
         this.factory = factory;
     }
 
-    public void current(LocalJavaInstallation currentJava) {
-        ProbeResult.success(InstallType.IS_JDK, current()).configure(currentJava);
+    public ProbeResult current() {
+        return ProbeResult.success(InstallType.IS_JDK, currentMetadata());
     }
 
     public ProbeResult checkJdk(File jdkPath) {
@@ -336,7 +350,7 @@ public class JavaInstallationProbe {
         return result;
     }
 
-    private static EnumMap<SysProp, String> current() {
+    private static EnumMap<SysProp, String> currentMetadata() {
         EnumMap<SysProp, String> result = new EnumMap<SysProp, String>(SysProp.class);
         for (SysProp type : SysProp.values()) {
             result.put(type, System.getProperty(type.sysProp, UNKNOWN));

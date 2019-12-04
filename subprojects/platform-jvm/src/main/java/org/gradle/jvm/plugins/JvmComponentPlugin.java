@@ -135,7 +135,7 @@ public class JvmComponentPlugin implements Plugin<Project> {
                 @Override
                 public void execute(InstalledJdk installedJdk) {
                     installedJdk.setJavaHome(Jvm.current().getJavaHome());
-                    probe.current(installedJdk);
+                    probe.current().configure(installedJdk);
                 }
             });
         }
