@@ -23,7 +23,7 @@ class SmokeTests(model: CIBuildModel, stage: Stage, testJava: JvmCategory) : Bas
     applyTestDefaults(
         model,
         this,
-        "smokeTest:smokeTest",
+        "smokeTest:smokeTest smokeTest:instantSmokeTest",
         notQuick = true,
         extraParameters = buildScanTag("SmokeTests") + " -PtestJavaHome=%linux.${testJava.version.name}.${testJava.vendor.name}.64bit%"
     )
